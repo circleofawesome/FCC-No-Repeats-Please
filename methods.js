@@ -2,11 +2,19 @@
 function permutations(str){
 	var retArr=[];
 	str=str.split('');
-	//var permutations=str.length
-
+	var count=factorial(str.length);
+	while(count>0){
+		//count-=1;
+		var tempStr=shuffle(str).join('');
+		if(retArr.includes(tempStr)===false){
+			retArr.push(tempStr);
+			count-=1;
+		}
+	}
+	return retArr;
 }
 
-permutation('aab');
+//permutation('aab');
 
 ===================
 
@@ -51,6 +59,6 @@ function factorial(num){
 	return fact;
 }
 
-factorial(7);
+//factorial(7);
 
 ==================
