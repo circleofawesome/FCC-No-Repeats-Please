@@ -62,3 +62,16 @@ function factorial(num){
 //factorial(7);
 
 ==================
+
+//takes string and turns it into an object with each key(a number) representing each character of the string 
+
+function stringToObject(str){
+	str=str.split('');
+	var retObj={};
+	for(var i=0;i<str.length;i++){
+		retObj[i]=str[i];
+	}
+	return retObj;
+}
+
+//stringToObject('aab');
