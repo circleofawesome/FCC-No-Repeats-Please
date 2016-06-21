@@ -1,7 +1,8 @@
 //takes a string and returns all possible permutations with the letters as an array
-function permutation(str){
+function permutations(str){
 	var retArr=[];
 	str=str.split('');
+	//var permutations=str.length
 
 }
 
@@ -30,5 +31,26 @@ function shuffle(arr){
 //shuffle([1,2,3,4,5]);
 
 //shuffle([7,2,3]);
+
+==================
+
+//takes a number and returns it's factorial
+
+function factorial(num){
+	if((num===0)||(num===1)){
+		return 1;
+	}
+	var fact=1;
+	while(true){
+		fact*=num;
+		num-=1;
+		if(num===1){
+			break;
+		}
+	}
+	return fact;
+}
+
+factorial(7);
 
 ==================
