@@ -119,9 +119,28 @@ function permutations(str){
 		for(var m=0;m<indexes[i].length;m++){
 			tempArr.push(strObjects[indexes[i][m]]);
 		}
-		retArr.push(tempArr);
+		retArr.push(tempArr.join(''));
 	}
 	return retArr;
 }
 
 permutations('aab');
+
+=======================
+
+//takes a string determines if it has the same character conscutively \
+//true means there IS a repeat
+
+function repeatChecker(str){
+	str=str.split('');
+	for(var i=0;i<str.length;i++){
+		if(str[i]===str[i-1]){
+			return true;
+		}
+	}
+	return false;
+}
+
+//repeatChecker('aab');
+
+========================
