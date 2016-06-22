@@ -101,7 +101,7 @@ function shuffledIndex(arr,factorial){
 	var retArr=[];
 	while(count>0){
 		var tempArr=shuffle(arr);
-		if(retArr.includes(tempArr)===false){
+		if(myIncludes(retArr,tempArr)===false){
 			retArr.push(tempArr);
 			count-=1;
 		}
@@ -116,8 +116,8 @@ shuffledIndex([0,1,2,3],24);
 function myIncludes(arr,val){
 	var bool=false;
 	for(var i=0;i<arr.length;i++){
-		for(var m=0;m<val.length;m++){
-			if(arr[i].includes(val[m])===false){
+		for(var m=0;m<arr[i].length;m++){
+			if(arr[i][m]!==val[m]){
 				bool=false;
 				break;
 			}
@@ -132,5 +132,5 @@ function myIncludes(arr,val){
 	return bool;
 }
 
-//myIncludes([[1,2,3],[4,5,6],[7,8,9]],[1,2,3,4]);
+//myIncludes([[1,2,3],[4,5,6],[7,8,9]],[6,4,5]);
 
