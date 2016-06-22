@@ -1,5 +1,6 @@
 //takes a string and returns all possible permutations with the letters as an array
-function permutations(str){
+//ONLY WORKS WHEN NO LETTERS ARE REPEATED
+//function permutations(str){
 	var retArr=[];
 	str=str.split('');
 	var count=factorial(str.length);
@@ -75,3 +76,61 @@ function stringToObject(str){
 }
 
 //stringToObject('aab');
+
+===================
+
+//takes a string and returns all possible permutations involving that string of characters
+
+function permutations(str){
+	var obj=stringToObject(str);
+	var retArr=[];
+	var count=factorial(str.length);
+	while(count>0){
+
+	}
+}
+
+//NOT COMPLETE
+
+====================
+
+//takes array of indexes and factorial of that length and returns all possible shuffled combinations in an array
+
+function shuffledIndex(arr,factorial){
+	var count=factorial;
+	var retArr=[];
+	while(count>0){
+		var tempArr=shuffle(arr);
+		if(retArr.includes(tempArr)===false){
+			retArr.push(tempArr);
+			count-=1;
+		}
+	}
+	return retArr;
+}
+shuffledIndex([0,1,2,3],24);
+
+======================
+
+//takes an array and another array and checks whether second array is inside the first array
+function myIncludes(arr,val){
+	var bool=false;
+	for(var i=0;i<arr.length;i++){
+		for(var m=0;m<val.length;m++){
+			if(arr[i].includes(val[m])===false){
+				bool=false;
+				break;
+			}
+			else{
+				bool=true;
+			}
+		}
+		if(bool===true){
+			return true;
+		}
+	}
+	return bool;
+}
+
+//myIncludes([[1,2,3],[4,5,6],[7,8,9]],[1,2,3,4]);
+

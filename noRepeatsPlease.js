@@ -30,18 +30,7 @@ function factorial(num){
 }
 
 function permutations(str){
-	var retArr=[];
-	str=str.split('');
-	var count=factorial(str.length);
-	while(count>0){
-		//count-=1;
-		var tempStr=shuffle(str).join('');
-		if(retArr.includes(tempStr)===false){
-			retArr.push(tempStr);
-			count-=1;
-		}
-	}
-	return retArr;
+	
 }
 
 permutations('aab');
