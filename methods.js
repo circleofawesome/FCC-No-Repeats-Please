@@ -97,18 +97,23 @@ function permutations(str){
 //takes array of indexes and factorial of that length and returns all possible shuffled combinations in an array
 
 function shuffledIndex(arr,factorial){
-	var count=factorial;
 	var retArr=[];
-	while(count>0){
-		var tempArr=shuffle(arr);
-		if(myIncludes(retArr,tempArr)===false){
+	var tempArr,bool;
+	while(true){
+		tempArr=shuffle(arr);
+		//retArr.push(tempArr);
+		//return myIncludes(retArr,tempArr);
+		bool=myIncludes(retArr,tempArr);
+		if(bool===false){
 			retArr.push(tempArr);
-			count-=1;
+			factorial-=1;
+			if(factorial===0){
+				return retArr;
+			}
 		}
 	}
-	return retArr;
 }
-shuffledIndex([0,1,2,3],24);
+//shuffledIndex([0,1,2],6);
 
 ======================
 
