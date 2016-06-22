@@ -1,23 +1,3 @@
-//takes a string and returns all possible permutations with the letters as an array
-//ONLY WORKS WHEN NO LETTERS ARE REPEATED
-//function permutations(str){
-	var retArr=[];
-	str=str.split('');
-	var count=factorial(str.length);
-	while(count>0){
-		//count-=1;
-		var tempStr=shuffle(str).join('');
-		if(retArr.includes(tempStr)===false){
-			retArr.push(tempStr);
-			count-=1;
-		}
-	}
-	return retArr;
-}
-
-//permutation('aab');
-
-===================
 
 //takes an array and returns it shuffled 
 
@@ -77,21 +57,6 @@ function stringToObject(str){
 
 //stringToObject('aab');
 
-===================
-
-//takes a string and returns all possible permutations involving that string of characters
-
-function permutations(str){
-	var obj=stringToObject(str);
-	var retArr=[];
-	var count=factorial(str.length);
-	while(count>0){
-
-	}
-}
-
-//NOT COMPLETE
-
 ====================
 
 //takes array of indexes and factorial of that length and returns all possible shuffled combinations in an array
@@ -139,3 +104,24 @@ function myIncludes(arr,val){
 
 //myIncludes([[1,2,3],[4,5,6],[7,8,9]],[6,4,5]);
 
+======================
+
+//takes a string and returns all possible character combinations as a 2d array
+
+function permutations(str){
+	var strObjects=stringToObject(str);
+	var retArr=[];
+	var numPermutations=factorial(str.length);
+	var letterKeys=Object.keys(strObjects);
+	var indexes=shuffledIndex(letterKeys,numPermutations);
+	for(var i=0;i<indexes.length;i++){
+		var tempArr=[];
+		for(var m=0;m<indexes[i].length;m++){
+			tempArr.push(strObjects[indexes[i][m]]);
+		}
+		retArr.push(tempArr);
+	}
+	return retArr;
+}
+
+permutations('aab');
