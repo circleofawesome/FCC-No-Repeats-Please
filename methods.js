@@ -124,7 +124,7 @@ function permutations(str){
 	return retArr;
 }
 
-permutations('aab');
+//permutations('aab');
 
 =======================
 
@@ -144,3 +144,4 @@ function repeatChecker(str){
 //repeatChecker('aab');
 
 ========================
+
